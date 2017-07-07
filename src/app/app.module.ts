@@ -18,6 +18,7 @@ import { Listado } from '../pages/listado/listado';
 import { Info } from '../pages/info/info';
 import { NuevoSitio } from '../pages/nuevo-sitio/nuevo-sitio';
 import { Basedatos } from '../providers/basedatos';
+import { IpService } from '../providers/ip-service';
 
 // AF2 Settings
 export const firebaseConfig = {
@@ -59,6 +60,7 @@ export const firebaseConfig = {
 	Geolocation,
 	LaunchNavigator,
 	Basedatos,
+	IpService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
