@@ -20,11 +20,15 @@
 		<ion-thumbnail item-left>
 			<img [src]="sitio.sitio.foto">
 		</ion-thumbnail>
-		<h2><a href="geo:{{ sitio.sitio.lat }},{{ sitio.sitio.lng }}">{{ sitio.sitio.address }}</a></h2>
+		<h2>{{ sitio.sitio.address }}</h2>
 		<p>{{ sitio.sitio.description }}</p>
 	</ion-item>
-	<ion-item-options>
-        <button danger (click)="deleteSitio(sitio)">
+	<ion-item-options side="right">
+        <button ion-button color="primary" (click)="comoLlegar(sitio)">
+            <ion-icon name="car"></ion-icon>
+            Ir a
+        </button>	
+        <button ion-button color="secondary" (click)="deleteSitio(sitio)">
             <ion-icon name="trash"></ion-icon>
             Borrar
         </button>
