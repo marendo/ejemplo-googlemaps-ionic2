@@ -18,7 +18,7 @@ declare const networkinterface;
 })
 export class Info {
 
-  myIP:   string = "0.0.0.0";
+  myIP:   any;
   wifiIP: string = "0.0.0.0";
   cellIP: string = "0.0.0.0";
 
@@ -34,11 +34,11 @@ export class Info {
 		console.log('refreshIP clicked');
 		
 		this.ipService.getIP()
-			.then(data1 => {
-			console.log('ipService ip', data1);
-//			this.ngZone.run(() => {
-//				this.myIP = data1.ip;
-//			});	
+			.then(data => {
+			console.log('ipService ip', data);
+			this.ngZone.run(() => {
+				this.myIP = data.ip;
+			});	
 		});
 		
 		try {		
